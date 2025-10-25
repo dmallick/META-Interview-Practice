@@ -17,17 +17,17 @@ public class BinarySearchEx1 {
             
             medium = Math.round( (startIndex+ endIndex)/2);
             if(targetElement == arr[medium]){
-                System.out.println("Element 3 found at " + medium);
+                System.out.println("Element " + targetElement + " found at " + medium);
                 return medium;
             }    
             
             else if(targetElement > arr[medium]){
-                System.out.println("Element 3  is at right of " + medium);
+                System.out.println("Element " + targetElement + " found at Right of " + medium);
                 startIndex = medium +1;
             }    
             
             else if(targetElement < arr[medium])
-                System.out.println("Element 3 is at left of " + medium);
+                System.out.println("Element " + targetElement + " found at Left of" + medium);
                 endIndex = medium -1 ;
             }    
 
