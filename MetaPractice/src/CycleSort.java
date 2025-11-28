@@ -3,10 +3,9 @@ import java.util.Arrays;
 public class CycleSort {
 
     public static void main(String[] args) {
-        int[] arr = {3,5,1,4,2};    
+        int[] arr = {3,7,5,1,4,2, 6};    
         cycleSort(arr);
     }
-
 
     static void cycleSort(int[] arr){
         int i=0;
