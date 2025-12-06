@@ -61,6 +61,29 @@ public boolean hasCycle(ListNode head) {
       return false;  // fast reached null → no cycle
     }
 
+public ListNode findStartOfCycle(ListNode head){
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;         // move 1 step
+            fast = fast.next.next;    // move 2 steps
+
+            if (slow == fast) {       // pointers meet → cycle exists
+                break;
+            }
+        }
+
+        slow = head;
+        while (fast != slow) {
+          slow = slow.next;
+          fast = fast.next;
+        }
+
+      return slow;  // fast reached null → no cycle
+}    
+
   public static void main(String[] args) {
     // Create linked list: 1 -> 2 -> 3 -> 4 -> 5
     ListNode head = new ListNode(1);
@@ -68,8 +91,12 @@ public boolean hasCycle(ListNode head) {
     head.next.next = new ListNode(3);
     head.next.next.next = new ListNode(4);
     head.next.next.next.next = new ListNode(5);
+    
     //uncomment it to test the cycle
+    // Make 5 → 3 (cycle starts at node with value 3)
     head.next.next.next.next.next = head.next.next;
+    
+    
     ListNode sol = new ListNode();
 
     // uncomment below for testing reversal
@@ -81,8 +108,12 @@ public boolean hasCycle(ListNode head) {
     //System.out.println(middle.val);
 
 
-    //uncomment below for testing Cycle
-     System.out.println(sol.hasCycle(head));
+    //uncomment below for testing if List has a  Cycle
+     //System.out.println(sol.hasCycle(head));
+
+
+     //uncomment below for testing if List has a  Cycle
+     System.out.println(sol.findStartOfCycle(head).val);
 
   }
 
