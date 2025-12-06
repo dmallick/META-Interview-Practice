@@ -84,6 +84,28 @@ public ListNode findStartOfCycle(ListNode head){
       return slow;  // fast reached null → no cycle
 }    
 
+public ListNode removeNthNode(ListNode head, int n){
+  ListNode dummy = new ListNode(0);
+  
+  dummy.next = head;
+  ListNode fast = dummy;
+  ListNode slow = dummy;
+  
+  for(int i=0; i< n; i++){
+    fast = fast.next;
+  }
+  while (fast.next != null) {
+    fast = fast.next;
+    slow = slow.next;
+  }
+
+  slow.next = slow.next.next;
+  return dummy.next;
+}
+
+
+
+
   public static void main(String[] args) {
     // Create linked list: 1 -> 2 -> 3 -> 4 -> 5
     ListNode head = new ListNode(1);
@@ -94,7 +116,7 @@ public ListNode findStartOfCycle(ListNode head){
     
     //uncomment it to test the cycle
     // Make 5 → 3 (cycle starts at node with value 3)
-    head.next.next.next.next.next = head.next.next;
+    //head.next.next.next.next.next = head.next.next;
     
     
     ListNode sol = new ListNode();
@@ -113,14 +135,25 @@ public ListNode findStartOfCycle(ListNode head){
 
 
      //uncomment below for testing if List has a  Cycle
-     System.out.println(sol.findStartOfCycle(head).val);
+     //System.out.println(sol.findStartOfCycle(head).val);
+
+
+     //uncomment below for testing deletion of Nth node from end
+     System.out.println("Removing 2nd node from last: "+ sol.removeNthNode(head, 2));
 
   }
 
   public static void printList(ListNode head) {
-    while (head != null) {
+    /*while (head != null) {
       System.out.print(head.val + " ");
       head = head.next;
-    }
+    }*/
+
+       ListNode curr = head;
+        while (curr != null) {
+            System.out.print(curr.val + " ");
+            curr = curr.next;
+        }
+        System.out.println();
   }
 }
