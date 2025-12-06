@@ -5,7 +5,7 @@ public class ListNode {
       ListNode(int val) { this.val = val; }
       ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
-
+      // Reverse a linkedList
       public ListNode reverseListNode(ListNode head){
         // 1 2 3 4 5
         ListNode prev = null;
@@ -21,6 +21,17 @@ public class ListNode {
         return prev;
       }
 
+      //Finding Middle of LinkedList
+        public ListNode findMiddle(ListNode head){
+          ListNode fast = head;
+          ListNode slow = head;
+
+          while (fast != null && fast.next != null) {
+              fast = fast.next.next;
+              slow = slow.next;  
+          }
+          return slow;
+        }
 
 
           public static void main(String[] args) {
@@ -32,9 +43,15 @@ public class ListNode {
         head.next.next.next.next = new ListNode(5);
 
         ListNode sol = new ListNode();
-        ListNode reversed = sol.reverseListNode(head);
-
-        printList(reversed);
+        
+        //uncomment below for testing reversal    
+        //ListNode reversed = sol.reverseListNode(head);
+        //printList(reversed);
+        
+        // Find the middle    
+        ListNode middle = sol.findMiddle(head);
+        System.out.println(middle.val);
+     
     }
 
     public static void printList(ListNode head) {
