@@ -10,7 +10,7 @@ public class BinarySearchEx1 {
     static int findTarget(int[] arr, int targetElement ){
         int startIndex=0, endIndex=arr.length-1, medium=0;
 
-        medium = Math.round(arr.length/2);
+        //medium = Math.round(arr.length/2);
         
         for(startIndex=0; startIndex<arr.length; startIndex++){
             

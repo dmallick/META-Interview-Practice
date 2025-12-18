@@ -1,3 +1,6 @@
+//Remove Duplicates from Sorted Array - LeetCode 26 - Two-Pointer O(N) In-Place
+
+
 import java.util.Arrays;
 
 public class RemoveDuplicatesFromArray {
@@ -7,30 +10,32 @@ public class RemoveDuplicatesFromArray {
             return 0;
         }
         
-        int uniqueIndex = 0; // Pointer for the position of unique elements
+        int slow = 0; // Pointer for the position of unique elements
         
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[uniqueIndex]) {
-                uniqueIndex++;
-                nums[uniqueIndex] = nums[i];
+        for (int fast = 1; fast < nums.length; fast++) {
+            if (nums[fast] != nums[slow]) { // Keep the index of slow pointer intact. Only move if there is a match.
+                slow++;
+                nums[slow] = nums[fast]; //Shifting the unmatched value next to the unique one. For example, move 2 next to 1
             }
         }
         
         // Fill remaining positions with placeholder value (e.g., -1)
-        for (int i = uniqueIndex + 1; i < nums.length; i++) {
-            nums[i] = -1; // Or any other placeholder value
+        for (int fast = slow + 1; fast < nums.length; fast++) {
+            nums[fast] = -1; // Or any other placeholder value
         }
         
-        return uniqueIndex + 1; // Number of unique elements
+        return slow + 1; // Number of unique elements
     }
 
     public static void main(String[] args) {
         //int nums[]= {0, 0, 1, 1, 2, 2, 3, 3, 4};
-        int[] nums = {1, 1, 1, 3, 5, 7, 7, 7};
+        //int[] nums = {1, 1, 1, 3, 5, 7, 7, 7};
+        int[] nums = {1,1,1,1,2,3,3,4};
 
-        int num = removeDuplicate(nums);
+        int newLen = removeDuplicate(nums);
+        System.out.println(Arrays.toString(Arrays.copyOf(nums, newLen)));
 
-        System.out.println(Arrays.toString(nums) +" & no of uniqueue elements = " + num);
+        //System.out.println(Arrays.toString(nums) +" & no of uniqueue elements = " + num);
 
     }
 }
