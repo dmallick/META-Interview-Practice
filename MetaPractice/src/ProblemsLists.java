@@ -4,8 +4,8 @@
 // 20-Dec: 
 3. Group Anagrams - https://leetcode.com/problems/group-anagrams/description/ - src/AnagramProblem.java - Completed -
 4. Longest Common Prefix - https://leetcode.com/problems/longest-common-prefix/description/ -src/LongestCommonPrefix
-5. Remove Element - Leetcode 27
-6. Majority Element - Leetcode 169 - Python
+5. Remove Element - Leetcode 27 - https://leetcode.com/problems/remove-element/description/ - src/RemoveElementFroArray
+6. Majority Element - Leetcode 169 - https://leetcode.com/problems/majority-element/description/ - 
 7. Sort an Array - Leetcode 912 - Python
 8. Sort Colors - Quicksort Partition - Leetcode 75 - Python
 9. Top K Frequent Elements - Bucket Sort - Leetcode 347 - Python
