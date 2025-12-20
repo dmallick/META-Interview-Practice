@@ -2,8 +2,8 @@
 1. Remove Duplicates from Sorted Array - LeetCode 26 - Two-Pointer O(N) In-Place. src/RemoveDuplicatesFromArray.java
 2. Merge two sorted LinkedLists sec/MergeTwoSortedLists
 // 20-Dec: 
-3. Group Anagrams - Categorize Strings by Count - Leetcode 49 - src/AnagramProblem.java
-4. Longest Common Prefix - Leetcode 14
+3. Group Anagrams - https://leetcode.com/problems/group-anagrams/description/ - src/AnagramProblem.java - Completed -
+4. Longest Common Prefix - https://leetcode.com/problems/longest-common-prefix/description/ -src/LongestCommonPrefix
 5. Remove Element - Leetcode 27
 6. Majority Element - Leetcode 169 - Python
 7. Sort an Array - Leetcode 912 - Python
