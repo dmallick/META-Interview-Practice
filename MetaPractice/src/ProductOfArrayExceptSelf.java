@@ -1,30 +1,41 @@
 import java.util.Arrays;
 
+//https://leetcode.com/problems/product-of-array-except-self/description/
 public class ProductOfArrayExceptSelf {
-    public int[] calculateProduct(int[] numbers){
-        int len = numbers.length;
-        int[] results = new int[numbers.length]; 
-        results[0]=1;
+    public int[] calculateProduct(int[]  nums){
+        int len =  nums.length, product=1;
+        int[] left = new int[len];
+        int[] right = new int[len];
+        int[] output = new int[len];
+        left[0] =1;
+        right[len-1]=1;
+
         for(int i=1; i< len; i++){
-            results[i]=results[i-1] * numbers[i-1];  
+            product =  nums[i-1] * product;
+            left[i] = product;
         }
-        System.out.println("The prefix elements: " + Arrays.toString(results));
-
-        //The postfix elements
-        int suffix = 1;
-        for (int i = len - 1; i >= 0; i--) {
-            results[i] = results[i] * suffix;
-            suffix *= numbers[i];
+        product = 1;        
+        for(int i=len-2; i>=0; i--){
+            
+            product =  nums[i+1] * product;
+            right[i] = product;
+            
         }
-        System.out.println("Final Result: " + Arrays.toString(results));
+        //System.out.println("Right->  "+Arrays.toString(right));
+        //System.out.println("Left->  "+Arrays.toString(left));
 
-
-        return results;
+        for(int i =0; i< len; i++){
+            output[i] = left[i] * right[i];
+        }
+        
+        return output;
     }
 
     public static void main(String[] args) {
-        int[] numbers = {1,2,3,4,5};
+        int[]  nums = {-1,1,0,-3,3};
         ProductOfArrayExceptSelf pae = new ProductOfArrayExceptSelf();
-        pae.calculateProduct(numbers);
+        int[] output = pae.calculateProduct( nums);
+        System.out.println("output->  "+Arrays.toString(output));
     }
 }
+

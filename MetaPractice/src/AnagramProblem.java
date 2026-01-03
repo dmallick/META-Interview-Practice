@@ -4,9 +4,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/*
+https://leetcode.com/problems/valid-anagram/description/
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+Example 1:
+Input: s = "anagram", t = "nagaram"
+Output: true
+
+Example 2:
+Input: s = "rat", t = "car"
+Output: false
+*/
+
 public class AnagramProblem {
     
-
 
      public static void main(String[] args) {
         String[] input= {"eat","tea","tan","ate","nat","bat"};

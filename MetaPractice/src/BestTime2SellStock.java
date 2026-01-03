@@ -24,14 +24,9 @@ public class BestTime2SellStock {
                     maxProfit = profit;
                 }
             }
-
         }
-
-
         System.out.println("the Max profit is: " + maxProfit);
         return maxProfit;
-
-        
     }
 
     
