@@ -18,8 +18,7 @@ public class BinarySearchEx1 {
             if(targetElement == arr[medium]){
                 System.out.println("Element " + targetElement + " found at " + medium);
                 return medium;
-            }    
-            
+            } 
             else if(targetElement > arr[medium]){
                 System.out.println("Element " + targetElement + " found at Right of " + medium);
                 startIndex = medium +1;

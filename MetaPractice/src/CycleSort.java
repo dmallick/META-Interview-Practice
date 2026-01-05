@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+//Theory: https://www.geeksforgeeks.org/dsa/cycle-sort/
 public class CycleSort {
 
     public static void main(String[] args) {
@@ -11,10 +12,10 @@ public class CycleSort {
         int i=0;
         int len = arr.length;
         while (i< len) {
-            int rightIndecx = arr[i] - 1;
-            if(arr[i] != arr[rightIndecx]) {
+            int rightIndex = arr[i] - 1;
+            if(arr[i] != arr[rightIndex]) {
                 System.err.println("The element is not in right index");
-                swap(arr, i, rightIndecx);
+                swap(arr, i, rightIndex);
             }else{
                 i++;
 

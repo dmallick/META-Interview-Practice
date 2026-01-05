@@ -1,9 +1,5 @@
 package top100gfg;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class MergedIntervals {
     
 

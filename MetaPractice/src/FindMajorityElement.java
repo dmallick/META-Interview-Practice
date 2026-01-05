@@ -11,7 +11,7 @@ public class FindMajorityElement {
 
     private static int finfMajority(int[] nums) {
         Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
+        //System.out.println(Arrays.toString(nums));
         return nums[nums.length / 2];
     }
 }
